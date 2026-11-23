@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-primary: #E4572E;
+  --color-secondary: #2E8B57;
+  --color-cream: #FFF9F2;
+  --color-ink: #2B2B2B;
+  --color-muted: #6B6B6B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    background-color: #FFF9F2;
+    color: #2B2B2B;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #2B2B2B;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #FFFFFF;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 12mm 14mm;
+    size: auto;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  aside,
+  nav,
+  header.no-print,
+  .no-print,
+  [role="dialog"],
+  [aria-label="Nutrition chart serving scope"] {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  #root > div,
+  #main-content,
+  main {
+    display: block !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  #main-content > div,
+  #main-content > div > div {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #main-content .lg\:grid-cols-12 {
+    display: block !important;
+  }
+
+  #main-content .lg\:grid-cols-12 > * + * {
+    margin-top: 14pt !important;
+  }
+
+  h1 {
+    font-size: 18pt !important;
+    line-height: 1.2 !important;
+    color: #111111 !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 13pt !important;
+    line-height: 1.25 !important;
+    color: #111111 !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 11.5pt !important;
+    line-height: 1.3 !important;
+    color: #111111 !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p,
+  li,
+  td,
+  th,
+  label,
+  span {
+    orphans: 3;
+    widows: 3;
+  }
+
+  section,
+  article,
+  header {
+    box-shadow: none !important;
+    background: #ffffff !important;
+    border-color: #d6cec4 !important;
+  }
+
+  #main-content header [role="img"].aspect-video {
+    max-height: 170px !important;
+    width: 100% !important;
+    border-bottom: 1px solid #d6cec4;
+  }
+
+  header,
+  tr,
+  li,
+  [aria-labelledby="nutrition-chart-heading"],
+  [role="img"] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  section,
+  table {
+    break-inside: auto;
+  }
+
+  input[type="checkbox"] {
+    border-color: #2b2b2b !important;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+
+  .kitchen-wall-print-root {
+    display: block !important;
+    width: 100% !important;
+    font-size: 9.5pt !important;
+    line-height: 1.3 !important;
+  }
+
+  .kitchen-wall-print-root.kitchen-wall-landscape {
+    page: kitchen-wall-landscape;
+  }
+
+  .kitchen-wall-print-root.kitchen-wall-portrait {
+    page: kitchen-wall-portrait;
+  }
+
+  .kitchen-wall-print-root table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+
+  .kitchen-wall-print-root th,
+  .kitchen-wall-print-root td {
+    border-color: #2b2b2b !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+@page kitchen-wall-landscape {
+  size: landscape;
+  margin: 9mm 11mm;
+}
+
+@page kitchen-wall-portrait {
+  size: portrait;
+  margin: 11mm 12mm;
+}
+

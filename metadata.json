@@ -1,0 +1,6 @@
+{
+  "name": "What Can I Cook?",
+  "description": "Decide what to cook from ingredients on hand, scale recipes to your household, track estimated nutrition, and log meals to a kitchen calendar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
